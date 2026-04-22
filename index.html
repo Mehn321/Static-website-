@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio | Modern Web Design</title>
+    <meta name="description"
+        content="A premium personal portfolio website showcasing modern web development and design skills. Built for GitHub Pages.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <section class="glass-card" id="main-content">
+            <img src="profile.png" alt="Profile Picture" class="profile-img" id="profile-pic">
+
+            <header>
+                <h1>Hello, I'm Nhem Day</h1>
+                <p class="tagline">Creative Developer & Designer</p>
+            </header>
+
+            <article>
+                <p class="bio">
+                    I craft high-performance, visually stunning web experiences that bridge the gap between design and
+                    technology. Focused on minimalism and user-centric aesthetics.
+                </p>
+            </article>
+
+            <footer class="social-links">
+                <a href="#" class="btn btn-primary" id="btn-projects">View Projects</a>
+                <a href="#" class="btn" id="btn-github">GitHub</a>
+                <a href="#" class="btn" id="btn-linkedin">LinkedIn</a>
+                <a href="#" class="btn" id="btn-contact">Contact</a>
+            </footer>
+        </section>
+    </main>
+
+    <script>
+        // Subtle micro-interaction: Tilt effect on card
+        const card = document.getElementById('main-content');
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 45;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 45;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset transform when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+            card.style.transition = 'all 0.5s ease';
+        });
+
+        document.addEventListener('mouseenter', () => {
+            card.style.transition = 'none';
+        });
+    </script>
+</body>
+
+</html>
